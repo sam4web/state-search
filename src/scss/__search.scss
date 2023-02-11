@@ -1,0 +1,65 @@
+.search {
+  @include flex(space-between, center);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
+  border-radius: 5.5px;
+  max-width: 350px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 10px 15px;
+
+  @include responsive-small {
+    max-width: 280px;
+  }
+
+  @include theme-light {
+    background-color: rgba($light, 0.85);
+    color: $dark;
+  }
+
+  @include theme-dark {
+    background-color: rgba($dark, 0.88);
+    color: $light;
+  }
+
+  &__box {
+    background-color: transparent;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+
+    &::placeholder {
+      transition: inherit;
+      color: $grey;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+
+    @include theme-light {
+      color: $dark;
+    }
+
+    @include theme-dark {
+      color: $light;
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+
+    @include theme-light {
+      color: $dark;
+    }
+
+    @include theme-dark {
+      color: $light;
+    }
+  }
+}

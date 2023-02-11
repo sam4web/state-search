@@ -6,7 +6,9 @@
 // general styles
 @import './_common';
 
-// sections
+// components
+@import './_header';
+@import './_search';
 
 // pages
 @import './_home';

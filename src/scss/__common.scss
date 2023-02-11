@@ -8,6 +8,7 @@ $global-transition: 150ms color linear, 200ms background-color ease-in-out,
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: $global-transition;
 
   &::selection {
     background-color: $primary-color;
@@ -34,9 +35,14 @@ body {
   font-size: 18px;
   line-height: 24px;
   font-family: 'Nunito', 'sans-serif';
+  background-color: $primary-light;
 
-  @include responsive_small {
+  @include responsive-small {
     font-size: 16px;
+  }
+
+  @include theme-dark {
+    background-color: $primary-color;
   }
 }
 
