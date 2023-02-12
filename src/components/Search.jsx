@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 
-export default function Search() {
-  const [countryName, setCountryName] = useState('');
-  const handleSubmit = (e) => {
+export default function Search({ searchCountry }) {
+  const [countryName, setCountryName] = useState('nepal');
+  const handleSearch = (e) => {
     e.preventDefault();
-
-    console.log(countryName);
-    setCountryName('');
+    searchCountry(countryName.toLowerCase());
+    // setCountryName('');
   };
 
   return (
@@ -15,7 +14,7 @@ export default function Search() {
       <form
         className='search'
         onSubmit={(e) => {
-          handleSubmit(e);
+          handleSearch(e);
         }}
       >
         <input

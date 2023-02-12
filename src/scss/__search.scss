@@ -1,23 +1,26 @@
 .search {
   @include flex(space-between, center);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
-  border-radius: 5.5px;
-  max-width: 350px;
+  border-radius: 5px;
+  max-width: 490px;
   width: 100%;
-  margin: 20px auto;
-  padding: 10px 15px;
+  margin: 0 auto;
+  margin-top: 35px;
+  padding: 13px 15px;
 
   @include responsive-small {
-    max-width: 280px;
+    max-width: 300px;
+    padding: 10px 15px;
+    margin-top: 25px;
   }
 
   @include theme-light {
-    background-color: rgba($light, 0.85);
+    background-color: $grey-light;
     color: $dark;
   }
 
   @include theme-dark {
-    background-color: rgba($dark, 0.88);
+    background-color: $grey-dark;
     color: $light;
   }
 
@@ -29,14 +32,21 @@
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+    width: 100%;
 
     &::placeholder {
       transition: inherit;
-      color: $grey;
+
+      @include theme-dark {
+        color: $grey-light;
+      }
+      @include theme-light {
+        color: $grey-dark;
+      }
     }
 
     &:focus::placeholder {
-      color: transparent;
+      color: transparent !important;
     }
 
     @include theme-light {

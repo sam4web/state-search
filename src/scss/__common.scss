@@ -35,14 +35,26 @@ body {
   font-size: 18px;
   line-height: 24px;
   font-family: 'Nunito', 'sans-serif';
-  background-color: $primary-light;
 
   @include responsive-small {
     font-size: 16px;
   }
 
   @include theme-dark {
-    background-color: $primary-color;
+    background-color: $dark;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $grey-light;
+    border-radius: 20px;
+
+    @include theme-dark {
+      background-color: $grey-dark;
+    }
   }
 }
 

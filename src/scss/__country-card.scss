@@ -1,0 +1,48 @@
+.show-data-list {
+  display: inline-block;
+
+  &__icon {
+    @include flex(center, center);
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    margin-top: 3px;
+  }
+
+  .data-list {
+    @include flex(flex-end, flex-start);
+    cursor: context-menu;
+    flex-direction: row-reverse;
+    gap: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
+    border-radius: 2.5px;
+    padding: 2px 7px;
+
+    &__items {
+      @include flex;
+      flex-direction: column;
+
+      & > span:nth-child(1) {
+        display: block;
+      }
+
+      & > span {
+        display: none;
+      }
+    }
+
+    .show-list > span {
+      display: block;
+    }
+  }
+}
+
+.country-card {
+  &__data {
+    &-item {
+      margin: 3.5px 0;
+    }
+  }
+}

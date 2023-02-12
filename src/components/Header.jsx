@@ -1,5 +1,5 @@
 import { FaGlobeAsia } from 'react-icons/fa';
-import { BsSun, BsMoon } from 'react-icons/bs';
+import { BsSun, BsMoonFill } from 'react-icons/bs';
 
 export default function Header({ toggleTheme, currentTheme }) {
   return (
@@ -12,7 +12,7 @@ export default function Header({ toggleTheme, currentTheme }) {
         {/* logo */}
 
         <div className='theme-toggler' onClick={toggleTheme}>
-          {currentTheme === 'theme-dark' ? <BsMoon /> : <BsSun />}
+          {currentTheme === 'theme-dark' ? <BsMoonFill /> : <BsSun />}
         </div>
         {/* theme-toggler */}
       </header>
