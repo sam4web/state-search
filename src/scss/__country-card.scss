@@ -9,20 +9,31 @@
     outline: none;
     font-size: 18px;
     margin-top: 3px;
+
+    @include theme-dark {
+      color: $light;
+    }
   }
 
   .data-list {
     @include flex(flex-end, flex-start);
     cursor: context-menu;
     flex-direction: row-reverse;
+    margin: 5px 0;
+    background-color: rgba($grey-light, 0.5);
     gap: 5px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
     border-radius: 2.5px;
     padding: 2px 7px;
 
+    @include theme-dark {
+      background-color: rgba($grey-dark, 0.6);
+    }
+
     &__items {
       @include flex;
       flex-direction: column;
+      text-align: left;
 
       & > span:nth-child(1) {
         display: block;
@@ -39,10 +50,121 @@
   }
 }
 
+.country-name,
+.country-official {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: $dark;
+
+  @include theme-dark {
+    color: $light;
+  }
+
+  @include responsive-medium {
+    font-size: 27px;
+    line-height: 35px;
+  }
+}
+
+.country-name {
+  margin-bottom: 5px;
+}
+
+.country-population {
+  margin-top: 5px !important;
+}
+
+.country-official {
+  text-align: center;
+  justify-content: center !important;
+  margin-bottom: 16px;
+}
+
+.country-card__block-container {
+  @include grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+
+  @include responsive-small {
+    grid-template-columns: 1fr;
+  }
+}
+
+.country-card__block {
+  @include flex(center, flex-start);
+  flex-direction: column;
+  background-color: rgba($grey-light, 0.55);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
+  padding: 15px 20px;
+  border-radius: 5px;
+
+  @include responsive-small {
+    align-items: center;
+    padding: 10px;
+  }
+
+  @include theme-dark {
+    background-color: rgba($grey-dark, 0.5);
+  }
+}
+
 .country-card {
+  max-width: 700px;
+  padding: 0 10px;
+  margin: 30px auto;
+  color: $dark;
+
+  @include responsive-small {
+    margin: 15px auto;
+  }
+
+  @include theme-dark {
+    color: $light;
+  }
+
   &__data {
-    &-item {
-      margin: 3.5px 0;
+    .country-card__item {
+      @include flex;
+      width: 100%;
+    }
+
+    .data-value {
+      min-width: 300px;
+      width: 100%;
+      max-width: fit-content;
+      display: inline-block;
+
+      @include responsive-medium {
+        min-width: 200px;
+      }
+
+      @include responsive-small {
+        min-width: 150px;
+      }
+    }
+  }
+
+  .data-key {
+    font-weight: 600;
+    font-size: 18.5px;
+    line-height: 28px;
+    color: $primary-color;
+    margin-right: 5px;
+
+    @include responsive-small {
+      font-size: 17px;
+    }
+  }
+
+  &__flag {
+    width: 250px;
+    align-self: center;
+
+    @include responsive-small {
+      width: 150px;
     }
   }
 }

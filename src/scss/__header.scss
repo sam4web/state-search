@@ -8,13 +8,23 @@
   color: $white;
 
   @include responsive-small {
-    padding: 12px 20px;
+    padding: 12px 10px;
+  }
+
+  .nav-items {
+    @include flex(center, center);
+    gap: 13px;
+
+    @include responsive-small {
+      gap: 10px;
+    }
   }
 
   .logo {
     @include flex;
     gap: 7px;
     cursor: pointer;
+    color: $light;
 
     &__icon {
       font-size: 25px;
@@ -28,11 +38,45 @@
   }
 
   .theme-toggler {
+    @include flex(center, center);
     font-size: 24px;
     cursor: pointer;
+    color: $light;
+
+    &:hover {
+      color: $dark;
+    }
 
     @include theme-dark {
       font-size: 21px;
+    }
+  }
+
+  .link {
+    @include flex(center, center);
+    gap: 5px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    height: 20px;
+    cursor: pointer;
+    color: $light;
+    text-decoration: none;
+    font-weight: 400;
+
+    &:hover {
+      color: $dark;
+    }
+
+    &__icon {
+      width: 26px;
+      height: 26px;
+    }
+
+    @include responsive-small {
+      &__text {
+        display: none;
+      }
     }
   }
 }

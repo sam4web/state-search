@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 
 export default function Search({ searchCountry }) {
-  const [countryName, setCountryName] = useState('nepal');
+  const [countryName, setCountryName] = useState('');
   const handleSearch = (e) => {
     e.preventDefault();
     searchCountry(countryName.toLowerCase());
